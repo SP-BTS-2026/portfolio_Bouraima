@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets - Portfolio Imdad BOURAIMA</title>
+    <link rel="stylesheet" href="style/style_projets.css">
+    <style>
+        /* ===============================
+            HEADER & NAVIGATION
+           =============================== */
+
+        /* Reset de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background-color: #ffffff; /* FOND BLANC COMPLET */
+            color: #000000; /* TEXTE NOIR */
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #000000; /* Header Noir pour le contraste */
+            color: #ffffff; /* Texte Blanc sur fond Noir */
+            text-align: center;
+            padding: 2.5rem 1rem;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #ffffff;
+            opacity: 0.8;
+        }
+
+        /* NAVIGATION */
+        nav {
+            background-color: #ffffff; /* Nav Blanche */
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1.2rem 0;
+            border-bottom: 2px solid #000000; /* Ligne noire bien nette */
+        }
+
+        nav a {
+            color: #000000; /* Liens Noirs */
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #666666; /* Gris foncé au survol */
+        }
+
+        /* Responsive mobile */
+        @media (max-width: 600px) {
+            nav {
+                flex-wrap: wrap;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BOURAIMA Imdad</h1>
+        <p>Développeur Web en recherche d’alternance DTA</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="competences.html">Compétences</a>
+        <a href="projets.html" class="active">Projets</a>
+        <a href="veille.html">Veille</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+        <section id="projets" class="section" style="padding: 2rem;">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Mes projets</h2>
+
+            <ol class="liste-projets">
+                <li class="projet">
+                    <h3>LegalHelp</h3>
+                    <img src="Documents/Legal_Help/image1.png" class="img-preview" alt="Accueil LegalHelp">
+                    <p>Site web permettant de faciliter la mise en relation entre clients et avocats.</p>
+                    <div class="liens" style="display: flex; gap: 10px; justify-content: center;">
+    <button type="button" class="btn" onclick="ouvrirGalerie('legalhelp')">Voir la présentation</button>
+    <a href="Documents/Legal_Help/documentation.pdf" target="_blank" class="btn" style="text-decoration: none; display: inline-block;">Documentation</a>
+</div>
+                    <div id="galerie-legalhelp" style="display:none;">
+                        <img src="Documents/Legal_Help/image1.png">
+                        <img src="Documents/Legal_Help/connexion.png">
+                        <img src="Documents/Legal_Help/inscription.png">
+                        <img src="Documents/Legal_Help/IA.png">
+                        <img src="Documents/Legal_Help/article.png">
+                    </div>
+                </li>
+
+                <li class="projet">
+                    <h3>Shopify Bijoux de Luxe</h3>
+                    <img src="Documents/Shopify/image1.png" class="img-preview" alt="Aperçu Boutique Shopify">
+                    <p>Site e-commerce pour vendre des bijoux de luxe avec Shopify.</p>
+                    <div class="liens" style="display: flex; gap: 10px; justify-content: center;">
+        <button type="button" class="btn" onclick="ouvrirGalerie('shopify')">Voir la présentation</button>
+        <a href="Documents/Shopify/votre-doc.pdf" target="_blank" class="btn" style="text-decoration: none;">Documentation</a>
+    </div>
+                    <div id="galerie-shopify" style="display:none;">
+                        <img src="Documents/Shopify/image1.png">
+                        <img src="Documents/Shopify/image2.png">
+                        <img src="Documents/Shopify/image3.png">
+                    </div>
+                </li>
+
+                <li class="projet">
+                    <h3>ASIH</h3>
+                 <img src="Documents/ASIH/image1.png" class="img-preview" alt="Acceuil ASIH">
+
+                    <p>Application de covoiturage inspire de uber .</p>
+                    <div class="liens" style="display: flex; gap: 10px; justify-content: center;">
+        <button type="button" class="btn" onclick="ouvrirGalerie('ASIH')">Voir la présentation</button>
+        <a href="Documents/ASIH/NOM_DE_TON_FICHIER.pdf" target="_blank" class="btn" style="text-decoration: none;">Documentation</a>
+    </div>
+                    <div id="galerie-ASIH" style="display:none;">
+                        <img src="Documents/ASIH/image1.png">
+                        <img src="Documents/ASIH/image2.png">
+                        <img src="Documents/ASIH/image3.png">
+                        <img src="Documents/ASIH/image4.png">
+
+
+
+
+                    </div>
+                </li>
+
+                <li class="projet">
+                    <h3>Plateforme d'enregistrement de joueur</h3>
+                    <img src="Documents/Joueurs/image1.png" class="img-preview" alt="Plateforme Joueurs">
+                    <p>Site web permettant d'enregistrer les joueurs pour des jeux de réalité virtuelle.</p>
+                   <div class="liens" style="display: flex; gap: 10px; justify-content: center;">
+        <button type="button" class="btn" onclick="ouvrirGalerie('joueurs')">Voir la présentation</button>
+        <a href="Documents/Joueurs/NOM_DE_TON_FICHIER.pdf" target="_blank" class="btn" style="text-decoration: none;">Documentation</a>
+    </div>
+                    <div id="galerie-joueurs" style="display:none;">
+                        <img src="Documents/Joueurs/image1.png">
+                        <img src="Documents/Joueurs/image2.png">
+                        <img src="Documents/Joueurs/image3.png">
+                        <img src="Documents/Joueurs/image4.png">
+                        <img src="Documents/Joueurs/image.png">
+                    </div>
+                </li>
+
+                <li class="projet">
+                    <h3>Dashboard_Data</h3>
+                    <img src="Documents/Dashboard_Data/image5.png" class="img-preview">
+                    <p>Analyse et visualisation de données statistiques.</p>
+                    <div class="liens" style="display: flex; gap: 10px; justify-content: center;">
+        <button type="button" class="btn" onclick="ouvrirGalerie('dashboard')">Voir la présentation</button>
+        <a href="Documents/Dashboard_Data/data.pdf.pptx" target="_blank" class="btn" style="text-decoration: none;">Documentation</a>
+    </div>
+                    <div id="galerie-dashboard" style="display:none;">
+                        <img src="Documents/Dashboard_Data/image1.png">
+                        <img src="Documents/Dashboard_Data/image2.png">
+                        <img src="Documents/Dashboard_Data/image3.png">
+                        <img src="Documents/Dashboard_Data/image4.png">
+                        <img src="Documents/Dashboard_Data/image5.png">
+                    </div>
+
+                </li>
+                <li class="projet">
+                    <h3>Neige et soleil</h3>
+                    <img src="Documents/Neige_soleil/image1.png" class="img-preview">
+                    <p>Analyse et visualisation de données statistiques.</p>
+                    <div class="liens" style="display: flex; gap: 10px; justify-content: center;">
+        <button type="button" class="btn" onclick="ouvrirGalerie('neige_soleil')">Voir la présentation</button>
+        <a href="Documents/Neige_soleil/NOM_DE_TON_FICHIER.pdf" target="_blank" class="btn" style="text-decoration: none;">Documentation</a>
+    </div>
+                    <div id="galerie-dashboard" style="display:none;">
+                        <img src="Documents/neige_soleil/image1.png">
+                        <img src="Documents/neige_soleil/image2.png">
+                        <img src="Documents/neige_soleil/image3.png">
+                        <img src="Documents/neige_soleil/image4.png">
+                        <img src="Documents/neige_soleil/image5.png">
+                    </div>
+
+                </li>
+            </ol>
+        </section>
+    </main>
+
+    <div id="lightbox" class="lightbox" style="display:none;">
+        <span class="close" onclick="fermerGalerie()">&times;</span>
+        <div class="lightbox-container">
+            <img id="img-active" src="" alt="Image agrandie">
+            <div class="nav-buttons">
+                <button type="button" class="btn-nav" onclick="changerImage(-1)">Précédent</button>
+                <button type="button" class="btn-nav" onclick="changerImage(1)">Suivant</button>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background:#000;color:#fff;padding:48px 10%;border-top:3px solid #fff;font-family:'Inter',sans-serif;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:36px;">
+        <div>
+          <h3 style="font-size:1.4rem;font-weight:900;text-transform:uppercase;letter-spacing:-1px;margin:0 0 6px;color:#fff;">Imdad Bouraima</h3>
+          <p style="font-size:0.8rem;color:#888;margin:0;text-transform:uppercase;letter-spacing:2px;">Développeur Full-Stack — BTS SIO SLAM</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <a href="mailto:bouraimasamory@gmail.com" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:0.9rem;">
+            <span style="width:28px;height:28px;border:1px solid #444;display:flex;align-items:center;justify-content:center;font-size:13px;">@</span>
+            bouraimasamory@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/feed/" target="_blank" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:0.9rem;">
+            <span style="width:28px;height:28px;border:1px solid #444;display:flex;align-items:center;justify-content:center;font-size:13px;">in</span>
+            LinkedIn
+          </a>
+          <a href="https://github.com/IMDAD1306" target="_blank" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:0.9rem;">
+            <span style="width:28px;height:28px;border:1px solid #444;display:flex;align-items:center;justify-content:center;font-size:13px;">gh</span>
+            GitHub — IMDAD1306
+          </a>
+        </div>
+      </div>
+      <hr style="border:none;border-top:1px solid #222;margin:0 0 24px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+        <p style="font-size:0.78rem;color:#555;text-transform:uppercase;letter-spacing:2px;margin:0;">© 2026 Imdad Bouraima — Tous droits réservés</p>
+        <span style="font-size:0.75rem;color:#555;border:1px solid #333;padding:4px 12px;text-transform:uppercase;letter-spacing:1px;">Portfolio 2026</span>
+      </div>
+    </footer> 
+
+    <script src="js/galerie.js"></script>
+</body>
+</html>

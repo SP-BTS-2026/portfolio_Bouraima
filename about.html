@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/style_about.css">
+  <title>Portfolio - BOURAIMA Imdad</title>
+  <style>
+    /* Reset de base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #000000;
+      color: #ffffff;
+      text-align: center;
+      padding: 2.5rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #ffffff;
+      opacity: 0.8;
+    }
+
+    nav {
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1.2rem 0;
+      border-bottom: 2px solid #000000;
+    }
+
+    nav a {
+      color: #000000;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #666666;
+    }
+
+    @media (max-width: 600px) {
+      nav { flex-wrap: wrap; gap: 1rem; padding: 1rem; }
+      header h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>BOURAIMA Imdad</h1>
+  <p>Développeur Web en recherche d’alternance DTA</p>
+</header>
+
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="about.html" class="active">À propos</a>
+  <a href="competences.html">Compétences</a>
+  <a href="projets.html">Projets</a>
+  <a href="veille.html">Veille</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <section id="about" class="section" style="padding: 2rem;">
+    <h2 style="text-align: center; margin-bottom: 2rem;">À propos de moi</h2>
+
+    <div class="about-container" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px;">
+      <img src="images/photo_profil.jpg" alt="Photo de Imdad BOURAIMA" class="profile-photo">
+
+      <div class="about-text">
+        <p>
+          Je m'appelle <strong>Imdad BOURAIMA</strong>, étudiant en <strong>BTS SIO option SLAM</strong> à l’IRIS Paris.
+          Passionné par le développement web, j’aime transformer des idées en projets concrets et fonctionnels.
+          Durant mon stage chez <strong>Divrsitee</strong> à Paris, j’ai développé une plateforme web complète
+          de gestion de joueurs et d’administrateurs, en utilisant <strong>PHP, MySQL, HTML et CSS</strong>.
+        </p>
+
+        <p>
+          Actuellement, je poursuis mes études tout en cherchant une <strong>alternance en développement web</strong> 
+          pour continuer à progresser techniquement et professionnellement.
+        </p>
+
+        <div class="about-buttons" style="margin-top: 20px;">
+          <a href="cv_imdad_bouraima.pdf" target="_blank" class="btn" style="display: inline-block; padding: 10px 20px; background: #000; color: #fff; text-decoration: none; border-radius: 5px;">📄 Voir mon CV</a>
+          <a href="parcours.html" class="btn btn-secondary" style="display: inline-block; padding: 10px 20px; background: #666; color: #fff; text-decoration: none; border-radius: 5px; margin-left: 10px;">💻 Parcours Professionnel</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="background:#000;color:#fff;padding:48px 10%;border-top:3px solid #fff;font-family:'Inter',sans-serif;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:36px;">
+    <div>
+      <h3 style="font-size:1.4rem;font-weight:900;text-transform:uppercase;letter-spacing:-1px;margin:0 0 6px;color:#fff;">Imdad Bouraima</h3>
+      <p style="font-size:0.8rem;color:#888;margin:0;text-transform:uppercase;letter-spacing:2px;">Développeur Full-Stack — BTS SIO SLAM</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <a href="mailto:bouraimasamory@gmail.com" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:0.9rem;">
+        <span style="width:28px;height:28px;border:1px solid #444;display:flex;align-items:center;justify-content:center;font-size:13px;">@</span>
+        bouraimasamory@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/feed/" target="_blank" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:0.9rem;">
+        <span style="width:28px;height:28px;border:1px solid #444;display:flex;align-items:center;justify-content:center;font-size:13px;">in</span>
+        LinkedIn
+      </a>
+      <a href="https://github.com/IMDAD1306" target="_blank" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:0.9rem;">
+        <span style="width:28px;height:28px;border:1px solid #444;display:flex;align-items:center;justify-content:center;font-size:13px;">gh</span>
+        GitHub — IMDAD1306
+      </a>
+    </div>
+  </div>
+  <hr style="border:none;border-top:1px solid #222;margin:0 0 24px;">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+    <p style="font-size:0.78rem;color:#555;text-transform:uppercase;letter-spacing:2px;margin:0;">© 2026 Imdad Bouraima — Tous droits réservés</p>
+    <span style="font-size:0.75rem;color:#555;border:1px solid #333;padding:4px 12px;text-transform:uppercase;letter-spacing:1px;">Portfolio 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>

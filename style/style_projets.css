@@ -1,0 +1,183 @@
+/* =========================
+   PAGE PROJETS (STRUCTURE)
+   ========================= */
+
+#projets {
+  background-color: #ffffff; /* Fond blanc */
+  padding: 4rem 10%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  border: 1px solid #000000;
+}
+
+#projets h2 {
+  color: #000000; /* Texte noir */
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+}
+
+/* Grille des projets */
+.liste-projets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+}
+
+/* Carte Projet */
+.projet {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border: 2px solid #000000; /* Bordure noire marquée */
+}
+
+.img-preview {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #000000;
+}
+
+.projet h3 {
+  margin-bottom: 0.8rem;
+  color: #000000;
+  font-size: 1.3rem;
+}
+
+.projet p {
+  color: #000000;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* Boutons classiques */
+.projet .btn {
+  display: inline-block;
+  background-color: #000000; /* Bouton noir */
+  color: #ffffff; /* Texte blanc */
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  transition: 0.3s;
+  font-size: 0.9rem;
+  border: 2px solid #000000;
+  cursor: pointer;
+}
+
+.projet .btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* =========================
+   LIGHTBOX (LA GALERIE)
+   ========================= */
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.98); /* Fond quasi-noir total */
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+#img-active {
+    max-width: 100%;
+    max-height: 75vh;
+    border: 3px solid #ffffff; /* Bordure blanche pour trancher sur le noir */
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+/* Bouton Fermer (Croix) */
+.close {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10001;
+    line-height: 1;
+}
+
+.close:hover {
+    color: #cccccc;
+}
+
+/* Navigation de la galerie */
+.nav-buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-nav {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-nav:hover {
+    background-color: #cccccc;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   FOOTER & RESPONSIVE
+   ========================= */
+
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  #projets { padding: 2rem 5%; }
+  .btn-nav { padding: 10px 15px; font-size: 0.9rem; }
+  .close { top: 20px; right: 20px; font-size: 40px; }
+}

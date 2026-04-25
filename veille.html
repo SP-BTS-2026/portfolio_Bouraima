@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veille Technologique - Portfolio Imdad BOURAIMA</title>
+  <link rel="stylesheet" href="style/style_veille.css">
+  <style>
+    /* Reset de base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #000000;
+      color: #ffffff;
+      text-align: center;
+      padding: 2.5rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    /* NAVIGATION */
+    nav {
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1.2rem 0;
+      border-bottom: 2px solid #000000;
+    }
+
+    nav a {
+      color: #000000;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #666666;
+    }
+
+    /* Responsive mobile */
+    @media (max-width: 600px) {
+      nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>BOURAIMA Imdad</h1>
+    <p>Développeur Web en recherche d’alternance DTA</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="about.html">À propos</a>
+    <a href="competences.html">Compétences</a>
+    <a href="projets.html">Projets</a>
+    <a href="veille.html" class="active">Veille</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <section id="veille" class="section" style="padding: 2rem;">
+      <h2 style="text-align: center; margin-bottom: 2rem;">Veille Technologique</h2>
+
+      <div class="veille-bloc" style="margin-bottom: 4rem;">
+        <h2 class="veille-titre">🤖 Veille n°1 : Les Agents IA Autonomes</h2>
+        <div class="introduction">
+          <p><strong>Sujet :</strong> L'évolution des LLM vers les Agents IA Autonomes.</p>
+          <p>Ma veille porte sur la transition entre les IA conversationnelles (Chatbots) et les agents capables d'exécuter des tâches complexes de manière autonome.</p>
+        </div>
+
+        <div class="grille-veille">
+          <article class="veille-item">
+            <h3>Qu'est-ce qu'un Agent IA ?</h3>
+            <p>Contrairement à un simple ChatGPT, un agent possède :</p>
+            <ul>
+              <li><strong>La Planification :</strong> Capacité à décomposer un objectif en étapes.</li>
+              <li><strong>L'usage d'outils :</strong> Capacité à utiliser le web, du code Python ou des APIs.</li>
+              <li><strong>La Mémoire :</strong> Utilisation de bases de données vectorielles (RAG).</li>
+            </ul>
+          </article>
+
+          <article class="veille-item">
+            <h3>Outils et Frameworks suivis</h3>
+            <ul>
+              <li><strong>LangChain / LangGraph :</strong> Pour créer des cycles de raisonnement.</li>
+              <li><strong>CrewAI :</strong> Pour faire collaborer plusieurs agents entre eux.</li>
+              <li><strong>OpenAI Assistants API :</strong> L'implémentation native des agents.</li>
+            </ul>
+          </article>
+
+          <article class="veille-item">
+            <h3>Méthodologie de veille</h3>
+            <p>Pour rester à jour, j'utilise : Feedly (RSS), Newsletter "The Rundown AI", YouTube et X.</p>
+          </article>
+        </div>
+
+        <div class="conclusion-veille" style="margin-top: 20px;">
+          <h3>Impact sur le métier de développeur SLAM</h3>
+          <p>Le passage aux agents IA transforme notre rôle : nous devenons des "architectes d'agents".</p>
+          <a href="Documents/synthese_veille_1_agents_ia.pdf" target="_blank" class="btn-synthese">📑 Télécharger la fiche (PDF)</a>
+        </div>
+      </div>
+
+      <div class="veille-bloc">
+        <h2 class="veille-titre">🔐 Veille n°2 : La Sécurité des APIs REST</h2>
+        <div class="introduction">
+          <p><strong>Sujet :</strong> Les bonnes pratiques et les menaces liées à la sécurisation des APIs REST.</p>
+          <p>Comprendre comment sécuriser ces points d'entrée, souvent ciblés par les attaquants.</p>
+        </div>
+
+        <div class="grille-veille">
+          <article class="veille-item">
+            <h3>Menaces principales</h3>
+            <ul>
+              <li><strong>Injection SQL :</strong> Requêtes malveillantes.</li>
+              <li><strong>Broken Authentication :</strong> Tokens mal gérés.</li>
+              <li><strong>Exposition de données :</strong> Retours trop verbeux.</li>
+            </ul>
+          </article>
+
+          <article class="veille-item">
+            <h3>Bonnes pratiques suivies</h3>
+            <ul>
+              <li><strong>JWT (JSON Web Token)</strong></li>
+              <li><strong>HTTPS obligatoire</strong></li>
+              <li><strong>Rate Limiting</strong></li>
+              <li><strong>Validation des entrées</strong></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="conclusion-veille" style="margin-top: 20px;">
+          <h3>Impact sur le métier de développeur SLAM</h3>
+          <p>Adoption des réflexes de "Security by Design" dans chaque projet.</p>
+          <a href="Documents/synthese_veille_2_api_securite.pdf" target="_blank" class="btn-synthese">📑 Télécharger la fiche (PDF)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#000;color:#fff;padding:48px 10%;border-top:3px solid #fff;font-family:'Inter',sans-serif;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:36px;">
+      <div>
+        <h3 style="font-size:1.4rem;font-weight:900;text-transform:uppercase;letter-spacing:-1px;margin:0 0 6px;color:#fff;">Imdad Bouraima</h3>
+        <p style="font-size:0.8rem;color:#888;margin:0;text-transform:uppercase;letter-spacing:2px;">Développeur Full-Stack — BTS SIO SLAM</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <a href="mailto:bouraimasamory@gmail.com" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:0.9rem;">
+          <span style="width:28px;height:28px;border:1px solid #444;display:flex;align-items:center;justify-content:center;font-size:13px;">@</span>
+          bouraimasamory@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/feed/" target="_blank" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:0.9rem;">
+          <span style="width:28px;height:28px;border:1px solid #444;display:flex;align-items:center;justify-content:center;font-size:13px;">in</span>
+          LinkedIn
+        </a>
+        <a href="https://github.com/IMDAD1306" target="_blank" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:0.9rem;">
+          <span style="width:28px;height:28px;border:1px solid #444;display:flex;align-items:center;justify-content:center;font-size:13px;">gh</span>
+          GitHub — IMDAD1306
+        </a>
+      </div>
+    </div>
+    <hr style="border:none;border-top:1px solid #222;margin:0 0 24px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+      <p style="font-size:0.78rem;color:#555;text-transform:uppercase;letter-spacing:2px;margin:0;">© 2026 Imdad Bouraima — Tous droits réservés</p>
+      <span style="font-size:0.75rem;color:#555;border:1px solid #333;padding:4px 12px;text-transform:uppercase;letter-spacing:1px;">Portfolio 2026</span>
+    </div>
+  </footer>
+
+</body>
+</html>

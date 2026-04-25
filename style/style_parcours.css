@@ -1,0 +1,160 @@
+/* --- Mise en page générale de la section --- */
+#parcours {
+    padding: 60px 20px;
+    background-color: #ffffff; /* Fond blanc pur */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #000000; /* Texte noir */
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- Boutons de filtrage --- */
+.filter-container {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 2px solid #000000;
+    color: #000000;
+    padding: 10px 25px;
+    margin: 5px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Structure de la Timeline --- */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 40px;
+}
+
+/* La ligne verticale */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #000000; /* Ligne noire */
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    transition: transform 0.3s ease;
+}
+
+/* Le point sur la ligne */
+.timeline-dot {
+    position: absolute;
+    left: -28px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: #000000;
+    border: 4px solid #ffffff; /* Bordure blanche pour trancher avec la ligne */
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #000000;
+    z-index: 2;
+}
+
+/* Contenu de la carte */
+.timeline-content {
+    background: #ffffff; 
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid #000000; /* Bordure noire fine */
+    border-left: 8px solid #000000; /* Accentuation à gauche */
+}
+
+.timeline-date {
+    display: inline-block;
+    background: #000000;
+    color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.timeline-content h3 {
+    margin: 0 0 5px 0;
+    color: #000000;
+}
+
+.timeline-content h4 {
+    margin: 0 0 15px 0;
+    color: #4b5563; /* Gris foncé pour le sous-titre */
+    font-weight: 500;
+}
+
+.timeline-content ul {
+    padding-left: 18px;
+    margin-bottom: 15px;
+}
+
+.timeline-content li {
+    margin-bottom: 8px;
+    color: #000000;
+    line-height: 1.5;
+}
+
+/* --- Badges de technologies --- */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.tech-stack span {
+    background: #f3f4f6; /* Gris très clair */
+    border: 1px solid #000000;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+/* Lien vidéo */
+.video-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #000000;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.video-link:hover {
+    color: #4b5563;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 30px;
+    }
+}

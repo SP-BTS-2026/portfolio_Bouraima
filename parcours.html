@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Parcours - Imdad BOURAIMA</title>
+  <link rel="stylesheet" href="style/style_parcours.css">
+  <style>
+    /* Reset de base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #000000;
+      color: #ffffff;
+      text-align: center;
+      padding: 2.5rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    /* NAVIGATION */
+    nav {
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1.2rem 0;
+      border-bottom: 2px solid #000000;
+    }
+
+    nav a {
+      color: #000000;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #666666;
+    }
+
+    /* FILTRES */
+    .filter-container {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .filter-btn {
+      padding: 10px 20px;
+      margin: 5px;
+      border: 1px solid #000;
+      background: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      transition: 0.3s;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    /* Responsive mobile */
+    @media (max-width: 600px) {
+      nav { flex-wrap: wrap; gap: 1rem; padding: 1rem; }
+      header h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>BOURAIMA Imdad</h1>
+    <p>Développeur Web en recherche d’alternance DTA</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="about.html">À propos</a>
+    <a href="competences.html">Compétences</a>
+    <a href="projets.html">Projets</a>
+    <a href="veille.html">Veille</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <section id="parcours" class="section" style="padding: 2rem;">
+      <h2 style="text-align: center; margin-bottom: 1rem;">Mon Parcours Professionnel</h2>
+
+      <div class="filter-container">
+        <button class="filter-btn active" onclick="filterSelection('all')">Tout voir</button>
+        <button class="filter-btn" onclick="filterSelection('stages')">💼 Stages</button>
+        <button class="filter-btn" onclick="filterSelection('etudes')">🎓 Certification & Études</button>
+      </div>
+
+      <div class="timeline" style="max-width: 800px; margin: 0 auto;">
+        
+        <div class="timeline-item stages">
+          <div class="timeline-content" style="border-left: 3px solid #000; padding-left: 20px; margin-bottom: 30px;">
+            <span style="font-weight: bold; color: #666;">Nov - Déc 2025</span>
+            <h3>Développeur Full-Stack (Stage)</h3>
+            <h4>Divrsitee, France</h4>
+            <p>Analyse sémantique et Dashboard interactif.</p>
+            <div class="tech-stack" style="margin-top: 10px;">
+              <span style="background: #eee; padding: 2px 8px; font-size: 0.8rem;">API REST</span>
+              <span style="background: #eee; padding: 2px 8px; font-size: 0.8rem;">Chart.js</span>
+            </div>
+            <a href="https://www.youtube.com/watch?v=GPCNIWmbSWI" target="_blank" style="color: #000; font-size: 0.9rem; display: block; margin-top: 10px;">🎥 Voir la vidéo</a>
+          </div>
+        </div>
+
+        <div class="timeline-item stages">
+          <div class="timeline-content" style="border-left: 3px solid #000; padding-left: 20px; margin-bottom: 30px;">
+            <span style="font-weight: bold; color: #666;">Juillet - Août 2025</span>
+            <h3>Développeur Full-Stack (Stage)</h3>
+            <h4>Divrsitee, France</h4>
+            <p>Plateforme de gestion de joueurs (Système d'inscription & rôles).</p>
+          </div>
+        </div>
+
+        <div class="timeline-item etudes">
+          <div class="timeline-content" style="border-left: 3px solid #000; padding-left: 20px; margin-bottom: 30px;">
+            <span style="font-weight: bold; color: #666;">2025 - 2026</span>
+            <h3>BTS SIO option SLAM</h3>
+            <h4>IRIS Paris (2ème année)</h4>
+          </div>
+        </div>
+
+        <div class="timeline-item etudes">
+          <div class="timeline-content" style="border-left: 3px solid #000; padding-left: 20px;">
+            <h3>Mes Certifications Techniques</h3>
+            <ul style="list-style: none; padding-top: 10px;">
+              <li style="margin-bottom: 10px;">✅ <strong>ANSSI : SecNumacadémie</strong> - <a href="documents/certif_anssi.pdf" target="_blank" style="color:#000;">Attestation</a></li>
+              <li style="margin-bottom: 10px;">✅ <strong>Certification SQL</strong> - <a href="documents/certif_sql.pdf" target="_blank" style="color:#000;">Attestation</a></li>
+              <li style="margin-bottom: 10px;">✅ <strong>Node.js Backend</strong> - <a href="Documents/certif_nodejs.pdf" target="_blank" style="color:#000;">Attestation</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#000;color:#fff;padding:48px 10%;border-top:3px solid #fff;font-family:'Inter',sans-serif;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:36px;">
+      <div>
+        <h3 style="font-size:1.4rem;font-weight:900;text-transform:uppercase;letter-spacing:-1px;margin:0 0 6px;color:#fff;">Imdad Bouraima</h3>
+        <p style="font-size:0.8rem;color:#888;margin:0;text-transform:uppercase;letter-spacing:2px;">Développeur Full-Stack — BTS SIO SLAM</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <a href="mailto:bouraimasamory@gmail.com" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:0.9rem;">
+          <span style="width:28px;height:28px;border:1px solid #444;display:flex;align-items:center;justify-content:center;font-size:13px;">@</span>
+          bouraimasamory@gmail.com
+        </a>
+        <a href="https://github.com/IMDAD1306" target="_blank" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:0.9rem;">
+          <span style="width:28px;height:28px;border:1px solid #444;display:flex;align-items:center;justify-content:center;font-size:13px;">gh</span>
+          GitHub — IMDAD1306
+        </a>
+      </div>
+    </div>
+    <div style="text-align: center; border-top: 1px solid #222; padding-top: 24px;">
+      <p style="font-size:0.78rem;color:#555;text-transform:uppercase;letter-spacing:2px;">© 2026 Imdad Bouraima — Portfolio 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    function filterSelection(category) {
+      const items = document.querySelectorAll('.timeline-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('onclick').includes("'" + category + "'")) {
+          btn.classList.add('active');
+        }
+      });
+
+      items.forEach(item => {
+        if (category === 'all') {
+          item.style.display = 'block';
+        } else {
+          item.classList.contains(category) ? item.style.display = 'block' : item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

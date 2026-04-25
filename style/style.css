@@ -1,0 +1,88 @@
+/* RESET & BASES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* LE SECRET DU FOOTER EN BAS */
+html, body {
+  height: 100%; 
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+  background-color: #ffffff; /* Fond Blanc */
+  color: #000000; /* Texte Noir */
+}
+
+main {
+  flex: 1; 
+}
+
+/* HEADER & NAV */
+header {
+  background-color: #000000; /* Header Noir */
+  color: #ffffff; /* Texte Blanc */
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+
+nav {
+  background-color: #ffffff; /* Nav Blanche */
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  border-bottom: 2px solid #000000; /* Ligne de séparation nette */
+}
+
+nav a {
+  color: #000000; /* Liens Noirs */
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+  color: #666666; /* Gris au survol */
+}
+
+/* SECTION HERO */
+.hero {
+  padding: 5rem 10%;
+  background: #000000; /* Hero Noir */
+  color: #ffffff;
+  text-align: center;
+}
+
+.hero h1 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* LE FOOTER */
+footer {
+  background-color: #000000; /* Footer Noir */
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #cccccc;
+}

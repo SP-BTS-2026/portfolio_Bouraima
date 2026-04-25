@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Accueil - Portfolio Imdad BOURAIMA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/style.css">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+    }
+
+    /* --- ANIMATIONS --- */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+      padding: 140px 10% 80px 10%;
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-tagline {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #666;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      letter-spacing: -2px;
+      /* Effet machine à écrire */
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 4px solid #000;
+      width: 0;
+      animation: 
+        typing 2s steps(25, end) forwards,
+        blink 0.8s step-end infinite;
+    }
+
+    .hero-description {
+      font-size: 1.4rem;
+      max-width: 650px;
+      line-height: 1.5;
+      font-weight: 300;
+      margin-bottom: 40px;
+      color: #333;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out 2.2s forwards; /* Apparaît après le texte */
+    }
+
+    /* --- SECTION OBJECTIFS --- */
+    .objectifs {
+      padding: 100px 10%;
+      border-top: 2px solid #000;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      font-weight: 900;
+      margin-bottom: 60px;
+    }
+
+    .objectifs-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      border-left: 1px solid #eee;
+    }
+
+    .obj-card {
+      padding: 50px;
+      border-right: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      transition: all 0.3s ease;
+    }
+
+    .obj-card:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    .obj-number {
+      font-size: 0.75rem;
+      font-weight: 900;
+      margin-bottom: 20px;
+      display: block;
+      text-decoration: underline;
+    }
+
+    .obj-card h3 {
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    /* --- BOUTON --- */
+    .btn-discover {
+      display: inline-block;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #000;
+      text-transform: uppercase;
+      border: 2px solid #000;
+      padding: 15px 35px;
+      transition: 0.3s;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out 2.5s forwards;
+    }
+
+    .btn-discover:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; white-space: normal; width: 100%; border: none; animation: fadeInUp 1s forwards; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - BOURAIMA Imdad</title>
+  <style>
+    /* ===============================
+        HEADER & NAVIGATION
+       =============================== */
+
+    /* Reset de base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #ffffff; /* FOND BLANC COMPLET */
+      color: #000000; /* TEXTE NOIR */
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #000000; /* Header Noir pour le contraste */
+      color: #ffffff; /* Texte Blanc sur fond Noir */
+      text-align: center;
+      padding: 2.5rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #ffffff;
+      opacity: 0.8;
+    }
+
+    /* NAVIGATION */
+    nav {
+      background-color: #ffffff; /* Nav Blanche */
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1.2rem 0;
+      border-bottom: 2px solid #000000; /* Ligne noire bien nette */
+    }
+
+    nav a {
+      color: #000000; /* Liens Noirs */
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #666666; /* Gris foncé au survol */
+    }
+
+    /* Responsive mobile */
+    @media (max-width: 600px) {
+      nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>BOURAIMA Imdad</h1>
+  <p>Développeur Web en recherche d’alternance DTA</p>
+</header>
+
+<nav>
+  <a href="index.html" class="active">Accueil</a>
+  <a href="about.html">À propos</a>
+  <a href="competences.html">Compétences</a>
+  <a href="projets.html">Projets</a>
+  <a href="veille.html">Veille</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <section style="padding: 2rem; text-align: center;">
+    </section>
+</main>
+
+</body>
+</html>
+<main>
+  <section class="hero">
+    <span class="hero-tagline">Portfolio 2026 — Imdad Bouraima</span>
+    <h1>DÉVELOPPEUR SLAM</h1>
+    
+    <div class="hero-description">
+      Spécialisé en <strong>BTS SIO</strong>. Je transforme des données complexes en interfaces web fluides et performantes.
+    </div>
+
+    <a href="projets.php" class="btn-discover">Voir mes projets</a>
+  </section>
+
+  <section class="objectifs">
+    <div class="section-header">
+      <h2>Objectifs</h2>
+    </div>
+
+    <div class="objectifs-list">
+      <div class="obj-card">
+        <span class="obj-number">01</span>
+        <h3>Full-Stack</h3>
+        <p>Développer des applications complètes, de la base de données jusqu'à l'expérience utilisateur.</p>
+      </div>
+
+      <div class="obj-card">
+        <span class="obj-number">02</span>
+        <h3>Data Insight</h3>
+        <p>Utiliser les outils DTA pour créer des tableaux de bord et des analyses de données pertinentes.</p>
+      </div>
+
+      <div class="obj-card">
+        <span class="obj-number">03</span>
+        <h3>Alternance</h3>
+        <p>Appliquer ma rigueur académique au sein d'une équipe professionnelle innovante.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="background:#000;color:#fff;padding:48px 10%;border-top:3px solid #fff;font-family:'Inter',sans-serif;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:36px;">
+    <div>
+      <h3 style="font-size:1.4rem;font-weight:900;text-transform:uppercase;letter-spacing:-1px;margin:0 0 6px;color:#fff;">Imdad Bouraima</h3>
+      <p style="font-size:0.8rem;color:#888;margin:0;text-transform:uppercase;letter-spacing:2px;">Développeur Full-Stack — BTS SIO SLAM</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <a href="mailto:bouraimasamory@gmail.com" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:0.9rem;">
+        <span style="width:28px;height:28px;border:1px solid #444;display:flex;align-items:center;justify-content:center;font-size:13px;">@</span>
+        bouraimasamory@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/feed/" target="_blank" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:0.9rem;">
+        <span style="width:28px;height:28px;border:1px solid #444;display:flex;align-items:center;justify-content:center;font-size:13px;">in</span>
+        LinkedIn
+      </a>
+      <a href="https://github.com/IMDAD1306" target="_blank" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:0.9rem;">
+        <span style="width:28px;height:28px;border:1px solid #444;display:flex;align-items:center;justify-content:center;font-size:13px;">gh</span>
+        GitHub — IMDAD1306
+      </a>
+    </div>
+  </div>
+  <hr style="border:none;border-top:1px solid #222;margin:0 0 24px;">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+    <p style="font-size:0.78rem;color:#555;text-transform:uppercase;letter-spacing:2px;margin:0;">© 2026 Imdad Bouraima — Tous droits réservés</p>
+    <span style="font-size:0.75rem;color:#555;border:1px solid #333;padding:4px 12px;text-transform:uppercase;letter-spacing:1px;">Portfolio 2026</span>
+  </div>
+</footer>
+</body>
+</html>
