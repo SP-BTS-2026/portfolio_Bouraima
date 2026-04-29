@@ -4,82 +4,480 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projets - Portfolio Imdad BOURAIMA</title>
-    <link rel="stylesheet" href="style/style_projets.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* ===============================
-            HEADER & NAVIGATION
-           =============================== */
-
-        /* Reset de base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
+        }
+
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --gray-100: #f5f5f5;
+            --gray-200: #e0e0e0;
+            --gray-400: #999999;
+            --gray-600: #555555;
+            --gray-800: #222222;
+            --accent: #000000;
         }
 
         body {
-            background-color: #ffffff; /* FOND BLANC COMPLET */
-            color: #000000; /* TEXTE NOIR */
+            background-color: var(--white);
+            color: var(--black);
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
         }
 
-        /* HEADER */
+        /* ── HEADER ── */
         header {
-            background-color: #000000; /* Header Noir pour le contraste */
-            color: #ffffff; /* Texte Blanc sur fond Noir */
+            background-color: var(--black);
+            color: var(--white);
             text-align: center;
             padding: 2.5rem 1rem;
         }
 
         header h1 {
             font-size: 2.2rem;
-            margin-bottom: 0.3rem;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            margin-bottom: 0.3rem;
         }
 
         header p {
-            font-size: 1rem;
-            color: #ffffff;
-            opacity: 0.8;
+            font-size: 0.95rem;
+            opacity: 0.7;
+            font-family: 'JetBrains Mono', monospace;
         }
 
-        /* NAVIGATION */
+        /* ── NAV ── */
         nav {
-            background-color: #ffffff; /* Nav Blanche */
+            background-color: var(--white);
             display: flex;
             justify-content: center;
             gap: 2rem;
             padding: 1.2rem 0;
-            border-bottom: 2px solid #000000; /* Ligne noire bien nette */
+            border-bottom: 2px solid var(--black);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         nav a {
-            color: #000000; /* Liens Noirs */
+            color: var(--black);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
             text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: opacity 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            opacity: 0.45;
+        }
+
+        /* ── MAIN ── */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 0.85rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--gray-400);
+            margin-bottom: 3rem;
+        }
+
+        /* ── SÉPARATEUR CATÉGORIE ── */
+        .category-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--gray-400);
+            border-top: 1px solid var(--gray-200);
+            padding-top: 1rem;
+            margin: 3rem 0 1.5rem;
+        }
+
+        /* ── GRILLE PROJETS ── */
+        .grille-projets {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2px;
+            background: var(--black);
+            border: 2px solid var(--black);
+        }
+
+        /* ── CARTE PROJET ── */
+        .projet-card {
+            background: var(--white);
+            display: flex;
+            flex-direction: column;
+            transition: background 0.2s;
+        }
+
+        .projet-card:hover {
+            background: var(--gray-100);
+        }
+
+        .projet-img-wrapper {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background: var(--gray-100);
+            border-bottom: 2px solid var(--black);
+            position: relative;
+        }
+
+        .projet-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .projet-card:hover .projet-img-wrapper img {
+            transform: scale(1.04);
+        }
+
+        .projet-num {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--black);
+            color: var(--white);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            letter-spacing: 1px;
+        }
+
+        .projet-body {
+            padding: 1.4rem 1.4rem 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .projet-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gray-400);
+        }
+
+        .projet-body h3 {
+            font-size: 1.15rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .projet-body .description {
+            font-size: 0.88rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* ── PILLS TECHNO ── */
+        .tech-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 0.3rem;
+        }
+
+        .tech-pill {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--black);
+            padding: 2px 8px;
+            color: var(--black);
+        }
+
+        /* ── BOUTONS ── */
+        .projet-actions {
+            display: flex;
+            gap: 8px;
+            padding: 0 1.4rem 1.4rem;
+            margin-top: auto;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 14px;
+            border: 2px solid var(--black);
+            background: var(--white);
+            color: var(--black);
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--gray-800);
+        }
+
+        /* ── GALERIE CACHÉE ── */
+        .galerie-data { display: none; }
+
+        /* ── LIGHTBOX ── */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-img-wrap {
+            max-width: 90vw;
+            max-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-img-wrap img {
+            max-width: 100%;
+            max-height: 75vh;
+            object-fit: contain;
+            border: 2px solid #333;
+        }
+
+        .lightbox-controls {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .btn-nav {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px 20px;
+            border: 2px solid #fff;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn-nav:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .lightbox-counter {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: #888;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .lightbox-close {
+            position: fixed;
+            top: 1.5rem;
+            right: 2rem;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+            line-height: 1;
+            font-weight: 300;
+            transition: opacity 0.2s;
+        }
+
+        .lightbox-close:hover { opacity: 0.5; }
+
+        /* ── CARTE "À VENIR" ── */
+        .projet-card.coming-soon {
+            background: var(--gray-100);
+            opacity: 0.7;
+        }
+
+        .coming-soon .projet-img-wrapper {
+            background: var(--gray-200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .coming-placeholder {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gray-400);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .coming-placeholder svg {
+            opacity: 0.3;
+        }
+
+        .badge-coming {
+            background: var(--gray-200);
+            color: var(--gray-600);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 3px 10px;
+            border: 1px dashed var(--gray-400);
+            display: inline-block;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 48px 10%;
+            border-top: 3px solid var(--white);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-bottom: 36px;
+        }
+
+        .footer-name h3 {
+            font-size: 1.4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin: 0 0 6px;
+        }
+
+        .footer-name p {
+            font-size: 0.8rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .footer-links a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ccc;
+            text-decoration: none;
             font-size: 0.9rem;
-            transition: all 0.3s ease;
+            transition: color 0.2s;
         }
 
-        nav a:hover,
-        nav a.active {
-            color: #666666; /* Gris foncé au survol */
+        .footer-links a:hover { color: #fff; }
+
+        .footer-icon {
+            width: 28px;
+            height: 28px;
+            border: 1px solid #444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            flex-shrink: 0;
         }
 
-        /* Responsive mobile */
-        @media (max-width: 600px) {
-            nav {
-                flex-wrap: wrap;
-                gap: 1rem;
-                padding: 1rem;
-            }
-            
-            header h1 {
-                font-size: 1.8rem;
-            }
+        hr.footer-hr {
+            border: none;
+            border-top: 1px solid #222;
+            margin: 0 0 24px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom p {
+            font-size: 0.78rem;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .footer-badge {
+            font-size: 0.75rem;
+            color: #555;
+            border: 1px solid #333;
+            padding: 4px 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 700px) {
+            nav { flex-wrap: wrap; gap: 0.8rem; padding: 1rem; }
+            main { padding: 2rem 1rem 4rem; }
+            .grille-projets { grid-template-columns: 1fr; }
+            .section-title { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -87,7 +485,7 @@
 
     <header>
         <h1>BOURAIMA Imdad</h1>
-        <p>Développeur Web en recherche d’alternance DTA</p>
+        <p>Développeur Web en recherche d'alternance DTA</p>
     </header>
 
     <nav>
@@ -100,157 +498,413 @@
     </nav>
 
     <main>
-        <section id="projets" class="section" style="padding: 2rem;">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Mes projets</h2>
+        <h2 class="section-title">Mes Projets</h2>
+        <p class="section-subtitle">// 6 réalisations · 3 à venir</p>
 
-            <ol class="liste-projets">
-                <li class="projet">
+        <div class="category-label">— Projets réalisés</div>
+
+        <div class="grille-projets">
+
+            <!-- 01 · LegalHelp -->
+            <div class="projet-card">
+                <div class="projet-img-wrapper">
+                    <span class="projet-num">01</span>
+                    <img src="Documents/Legal_Help/image1.png" alt="LegalHelp">
+                </div>
+                <div class="projet-body">
+                    <span class="projet-tag">Application Web · Mise en relation</span>
                     <h3>LegalHelp</h3>
-                    <img src="Documents/Legal_Help/image1.png" class="img-preview" alt="Accueil LegalHelp">
-                    <p>Site web permettant de faciliter la mise en relation entre clients et avocats.</p>
-                    <div class="liens" style="display: flex; gap: 10px; justify-content: center;">
-    <button type="button" class="btn" onclick="ouvrirGalerie('legalhelp')">Voir la présentation</button>
-    <a href="Documents/Legal_Help/documentation.pdf" target="_blank" class="btn" style="text-decoration: none; display: inline-block;">Documentation</a>
-</div>
-                    <div id="galerie-legalhelp" style="display:none;">
-                        <img src="Documents/Legal_Help/image1.png">
-                        <img src="Documents/Legal_Help/connexion.png">
-                        <img src="Documents/Legal_Help/inscription.png">
-                        <img src="Documents/Legal_Help/IA.png">
-                        <img src="Documents/Legal_Help/article.png">
+                    <p class="description">
+                        Plateforme web de mise en relation entre clients et avocats. 
+                        L'utilisateur peut rechercher un avocat selon sa spécialité, prendre rendez-vous, 
+                        et consulter des articles juridiques. Une intelligence artificielle intégrée 
+                        guide le client vers les bons professionnels en fonction de sa situation.
+                    </p>
+                    <div class="tech-pills">
+                        <span class="tech-pill">HTML/CSS</span>
+                        <span class="tech-pill">JavaScript</span>
+                        <span class="tech-pill">PHP</span>
+                        <span class="tech-pill">MySQL</span>
+                        <span class="tech-pill">IA</span>
                     </div>
-                </li>
+                </div>
+                <div class="projet-actions">
+                    <button class="btn btn-primary" onclick="ouvrirGalerie('legalhelp')">Voir la galerie</button>
+                    <a href="Documents/Legal_Help/documentation.pdf" target="_blank" class="btn">Documentation</a>
+                </div>
+                <div class="galerie-data" id="galerie-legalhelp">
+                    <img src="Documents/Legal_Help/image1.png">
+                    <img src="Documents/Legal_Help/connexion.png">
+                    <img src="Documents/Legal_Help/inscription.png">
+                    <img src="Documents/Legal_Help/IA.png">
+                    <img src="Documents/Legal_Help/article.png">
+                </div>
+            </div>
 
-                <li class="projet">
+            <!-- 02 · Shopify Bijoux de Luxe -->
+            <div class="projet-card">
+                <div class="projet-img-wrapper">
+                    <span class="projet-num">02</span>
+                    <img src="Documents/Shopify/image1.png" alt="Shopify Bijoux">
+                </div>
+                <div class="projet-body">
+                    <span class="projet-tag">E-commerce · Shopify</span>
                     <h3>Shopify Bijoux de Luxe</h3>
-                    <img src="Documents/Shopify/image1.png" class="img-preview" alt="Aperçu Boutique Shopify">
-                    <p>Site e-commerce pour vendre des bijoux de luxe avec Shopify.</p>
-                    <div class="liens" style="display: flex; gap: 10px; justify-content: center;">
-        <button type="button" class="btn" onclick="ouvrirGalerie('shopify')">Voir la présentation</button>
-        <a href="Documents/Shopify/votre-doc.pdf" target="_blank" class="btn" style="text-decoration: none;">Documentation</a>
-    </div>
-                    <div id="galerie-shopify" style="display:none;">
-                        <img src="Documents/Shopify/image1.png">
-                        <img src="Documents/Shopify/image2.png">
-                        <img src="Documents/Shopify/image3.png">
+                    <p class="description">
+                        Boutique en ligne dédiée à la vente de bijoux de luxe, développée sur la plateforme 
+                        Shopify. Configuration complète du thème, des collections produits, des pages de 
+                        présentation et du tunnel de paiement. Personnalisation CSS et création de fiches 
+                        produits optimisées pour la conversion.
+                    </p>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Shopify</span>
+                        <span class="tech-pill">Liquid</span>
+                        <span class="tech-pill">CSS</span>
+                        <span class="tech-pill">E-commerce</span>
                     </div>
-                </li>
+                </div>
+                <div class="projet-actions">
+                    <button class="btn btn-primary" onclick="ouvrirGalerie('shopify')">Voir la galerie</button>
+                    <a href="Documents/Shopify/votre-doc.pdf" target="_blank" class="btn">Documentation</a>
+                </div>
+                <div class="galerie-data" id="galerie-shopify">
+                    <img src="Documents/Shopify/image1.png">
+                    <img src="Documents/Shopify/image2.png">
+                    <img src="Documents/Shopify/image3.png">
+                </div>
+            </div>
 
-                <li class="projet">
+            <!-- 03 · ASIH -->
+            <div class="projet-card">
+                <div class="projet-img-wrapper">
+                    <span class="projet-num">03</span>
+                    <img src="Documents/ASIH/image1.png" alt="ASIH Covoiturage">
+                </div>
+                <div class="projet-body">
+                    <span class="projet-tag">Application Mobile · Mobilité</span>
                     <h3>ASIH</h3>
-                 <img src="Documents/ASIH/image1.png" class="img-preview" alt="Acceuil ASIH">
-
-                    <p>Application de covoiturage inspire de uber .</p>
-                    <div class="liens" style="display: flex; gap: 10px; justify-content: center;">
-        <button type="button" class="btn" onclick="ouvrirGalerie('ASIH')">Voir la présentation</button>
-        <a href="Documents/ASIH/NOM_DE_TON_FICHIER.pdf" target="_blank" class="btn" style="text-decoration: none;">Documentation</a>
-    </div>
-                    <div id="galerie-ASIH" style="display:none;">
-                        <img src="Documents/ASIH/image1.png">
-                        <img src="Documents/ASIH/image2.png">
-                        <img src="Documents/ASIH/image3.png">
-                        <img src="Documents/ASIH/image4.png">
-
-
-
-
+                    <p class="description">
+                        Application de covoiturage inspirée du modèle Uber, pensée pour faciliter 
+                        les déplacements urbains. L'utilisateur peut commander une course, suivre 
+                        son chauffeur en temps réel et gérer ses trajets. Interface conducteur et 
+                        passager distinctes avec géolocalisation intégrée.
+                    </p>
+                    <div class="tech-pills">
+                        <span class="tech-pill">HTML/CSS</span>
+                        <span class="tech-pill">JavaScript</span>
+                        <span class="tech-pill">PHP</span>
+                        <span class="tech-pill">Géolocalisation</span>
                     </div>
-                </li>
+                </div>
+                <div class="projet-actions">
+                    <button class="btn btn-primary" onclick="ouvrirGalerie('asih')">Voir la galerie</button>
+                    <a href="Documents/ASIH/asih_documentation.pdf" target="_blank" class="btn">Documentation</a>
+                </div>
+                <div class="galerie-data" id="galerie-asih">
+                    <img src="Documents/ASIH/image1.png">
+                    <img src="Documents/ASIH/image2.png">
+                    <img src="Documents/ASIH/image3.png">
+                    <img src="Documents/ASIH/image4.png">
+                </div>
+            </div>
 
-                <li class="projet">
-                    <h3>Plateforme d'enregistrement de joueur</h3>
-                    <img src="Documents/Joueurs/image1.png" class="img-preview" alt="Plateforme Joueurs">
-                    <p>Site web permettant d'enregistrer les joueurs pour des jeux de réalité virtuelle.</p>
-                   <div class="liens" style="display: flex; gap: 10px; justify-content: center;">
-        <button type="button" class="btn" onclick="ouvrirGalerie('joueurs')">Voir la présentation</button>
-        <a href="Documents/Joueurs/NOM_DE_TON_FICHIER.pdf" target="_blank" class="btn" style="text-decoration: none;">Documentation</a>
-    </div>
-                    <div id="galerie-joueurs" style="display:none;">
-                        <img src="Documents/Joueurs/image1.png">
-                        <img src="Documents/Joueurs/image2.png">
-                        <img src="Documents/Joueurs/image3.png">
-                        <img src="Documents/Joueurs/image4.png">
-                        <img src="Documents/Joueurs/image.png">
+            <!-- 04 · Plateforme Joueurs VR -->
+            <div class="projet-card">
+                <div class="projet-img-wrapper">
+                    <span class="projet-num">04</span>
+                    <img src="Documents/Joueurs/image1.png" alt="Plateforme Joueurs VR">
+                </div>
+                <div class="projet-body">
+                    <span class="projet-tag">Application Web · Gaming · VR</span>
+                    <h3>Plateforme d'enregistrement VR</h3>
+                    <p class="description">
+                        Système d'enregistrement et de gestion de joueurs pour des sessions de réalité 
+                        virtuelle. Permet de créer un profil joueur, de s'inscrire à des créneaux de jeu 
+                        et de consulter ses statistiques de sessions. Interface administrateur pour la 
+                        gestion des réservations et du matériel VR disponible.
+                    </p>
+                    <div class="tech-pills">
+                        <span class="tech-pill">HTML/CSS</span>
+                        <span class="tech-pill">JavaScript</span>
+                        <span class="tech-pill">PHP</span>
+                        <span class="tech-pill">MySQL</span>
+                        <span class="tech-pill">VR</span>
                     </div>
-                </li>
+                </div>
+                <div class="projet-actions">
+                    <button class="btn btn-primary" onclick="ouvrirGalerie('joueurs')">Voir la galerie</button>
+                    <a href="Documents/Joueurs/joueurs_documentation.pdf" target="_blank" class="btn">Documentation</a>
+                </div>
+                <div class="galerie-data" id="galerie-joueurs">
+                    <img src="Documents/Joueurs/image1.png">
+                    <img src="Documents/Joueurs/image2.png">
+                    <img src="Documents/Joueurs/image3.png">
+                    <img src="Documents/Joueurs/image4.png">
+                    <img src="Documents/Joueurs/image.png">
+                </div>
+            </div>
 
-                <li class="projet">
-                    <h3>Dashboard_Data</h3>
-                    <img src="Documents/Dashboard_Data/image5.png" class="img-preview">
-                    <p>Analyse et visualisation de données statistiques.</p>
-                    <div class="liens" style="display: flex; gap: 10px; justify-content: center;">
-        <button type="button" class="btn" onclick="ouvrirGalerie('dashboard')">Voir la présentation</button>
-        <a href="Documents/Dashboard_Data/data.pdf.pptx" target="_blank" class="btn" style="text-decoration: none;">Documentation</a>
-    </div>
-                    <div id="galerie-dashboard" style="display:none;">
-                        <img src="Documents/Dashboard_Data/image1.png">
-                        <img src="Documents/Dashboard_Data/image2.png">
-                        <img src="Documents/Dashboard_Data/image3.png">
-                        <img src="Documents/Dashboard_Data/image4.png">
-                        <img src="Documents/Dashboard_Data/image5.png">
+            <!-- 05 · Dashboard Data -->
+            <div class="projet-card">
+                <div class="projet-img-wrapper">
+                    <span class="projet-num">05</span>
+                    <img src="Documents/Dashboard_Data/image5.png" alt="Dashboard Data">
+                </div>
+                <div class="projet-body">
+                    <span class="projet-tag">Data · Visualisation · Analyse</span>
+                    <h3>Dashboard Data</h3>
+                    <p class="description">
+                        Tableau de bord interactif d'analyse et de visualisation de données statistiques. 
+                        Traitement de jeux de données bruts, création de graphiques dynamiques (courbes, 
+                        histogrammes, camemberts) et synthèse des indicateurs clés. Outil d'aide à la 
+                        décision destiné à rendre les données complexes lisibles et exploitables.
+                    </p>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">Pandas</span>
+                        <span class="tech-pill">Matplotlib</span>
+                        <span class="tech-pill">Power BI</span>
                     </div>
+                </div>
+                <div class="projet-actions">
+                    <button class="btn btn-primary" onclick="ouvrirGalerie('dashboard')">Voir la galerie</button>
+                    <a href="Documents/Dashboard_Data/data.pdf.pptx" target="_blank" class="btn">Présentation</a>
+                </div>
+                <div class="galerie-data" id="galerie-dashboard">
+                    <img src="Documents/Dashboard_Data/image1.png">
+                    <img src="Documents/Dashboard_Data/image2.png">
+                    <img src="Documents/Dashboard_Data/image3.png">
+                    <img src="Documents/Dashboard_Data/image4.png">
+                    <img src="Documents/Dashboard_Data/image5.png">
+                </div>
+            </div>
 
-                </li>
-                <li class="projet">
-                    <h3>Neige et soleil</h3>
-                    <img src="Documents/Neige_soleil/image1.png" class="img-preview">
-                    <p>Analyse et visualisation de données statistiques.</p>
-                    <div class="liens" style="display: flex; gap: 10px; justify-content: center;">
-        <button type="button" class="btn" onclick="ouvrirGalerie('neige_soleil')">Voir la présentation</button>
-        <a href="Documents/Neige_soleil/NOM_DE_TON_FICHIER.pdf" target="_blank" class="btn" style="text-decoration: none;">Documentation</a>
-    </div>
-                    <div id="galerie-dashboard" style="display:none;">
-                        <img src="Documents/neige_soleil/image1.png">
-                        <img src="Documents/neige_soleil/image2.png">
-                        <img src="Documents/neige_soleil/image3.png">
-                        <img src="Documents/neige_soleil/image4.png">
-                        <img src="Documents/neige_soleil/image5.png">
+            <!-- 06 · Neige et Soleil -->
+            <div class="projet-card">
+                <div class="projet-img-wrapper">
+                    <span class="projet-num">06</span>
+                    <img src="Documents/Neige_soleil/image1.png" alt="Neige et Soleil">
+                </div>
+                <div class="projet-body">
+                    <span class="projet-tag">Site Web · Location · Montagne</span>
+                    <h3>Neige et Soleil</h3>
+                    <p class="description">
+                        Site web de location de chalets et de matériel de ski en montagne. 
+                        Les visiteurs peuvent parcourir le catalogue de chalets disponibles, 
+                        consulter les équipements de ski à louer (skis, boots, casques) et 
+                        effectuer une réservation en ligne. Interface soignée avec mise en valeur 
+                        des destinations et des offres saisonnières.
+                    </p>
+                    <div class="tech-pills">
+                        <span class="tech-pill">HTML/CSS</span>
+                        <span class="tech-pill">JavaScript</span>
+                        <span class="tech-pill">PHP</span>
+                        <span class="tech-pill">Réservation</span>
                     </div>
+                </div>
+                <div class="projet-actions">
+                    <button class="btn btn-primary" onclick="ouvrirGalerie('neige')">Voir la galerie</button>
+                    <a href="Documents/Neige_soleil/neige_soleil_documentation.pdf" target="_blank" class="btn">Documentation</a>
+                </div>
+                <div class="galerie-data" id="galerie-neige">
+                    <img src="Documents/Neige_soleil/image1.png">
+                    <img src="Documents/Neige_soleil/image2.png">
+                    <img src="Documents/Neige_soleil/image3.png">
+                    <img src="Documents/Neige_soleil/image4.png">
+                    <img src="Documents/Neige_soleil/image5.png">
+                </div>
+            </div>
 
-                </li>
-            </ol>
-        </section>
+        </div>
+
+        <div class="category-label">— Projets à venir</div>
+
+        <div class="grille-projets">
+
+            <!-- 07 · Snake -->
+            <div class="projet-card">
+    <div class="projet-img-wrapper">
+        <span class="projet-num">07</span>
+        <img src="Documents/Jeu_snake/image1.png" alt="Jeu Snake">
+    </div>
+    <div class="projet-body">
+        <span class="projet-tag">Jeu · JavaScript · Canvas</span>
+        <h3>Jeu Snake</h3>
+        <p class="description">
+            Recréation du célèbre jeu Snake en JavaScript natif. 
+            Gestion du canvas, des collisions, du score et des niveaux de difficulté. 
+            Interface soignée avec écran d'accueil, highscore sauvegardé et responsive design.
+        </p>
+        <div class="tech-pills">
+            <span class="tech-pill">JavaScript</span>
+            <span class="tech-pill">Canvas API</span>
+            <span class="tech-pill">HTML/CSS</span>
+        </div>
+    </div>
+    <div class="projet-actions">
+        <button class="btn btn-primary" onclick="ouvrirGalerie('snake')">Voir la galerie</button>
+        <a href="Documents/Jeu_snake/snake_documentation.pdf" target="_blank" class="btn">Documentation</a>
+    </div>
+    <div class="galerie-data" id="galerie-snake">
+        <img src="Documents/Jeu_snake/image1.png">
+        <img src="Documents/Jeu_snake/image2.png">
+
+
+        </div>
+</div>
+            <!-- 08 · WordPress E-enseignement -->
+            <div class="projet-card">
+    <div class="projet-img-wrapper">
+        <span class="projet-num">08</span>
+        <img src="Documents/WordPress/image1.png" alt="WordPress E-enseignement">
+    </div>
+    <div class="projet-body">
+        <span class="projet-tag">WordPress · CMS · Éducation</span>
+        <h3>WordPress E-enseignement</h3>
+        <p class="description">
+            Site WordPress présentant un groupe de classe et leurs projets réalisés au cours 
+            de l'année. Vitrine collaborative avec pages élèves, galerie de projets, 
+            blog de suivi pédagogique et espace de publication des travaux de groupe.
+        </p>
+        <div class="tech-pills">
+            <span class="tech-pill">WordPress</span>
+            <span class="tech-pill">PHP</span>
+            <span class="tech-pill">CSS</span>
+            <span class="tech-pill">Gutenberg</span>
+        </div>
+    </div>
+    <div class="projet-actions">
+        <button class="btn btn-primary" onclick="ouvrirGalerie('wordpress')">Voir la galerie</button>
+        <a href="Documents/WordPress/wordpress_documentation.pdf" target="_blank" class="btn">Documentation</a>
+    </div>
+    <div class="galerie-data" id="galerie-wordpress">
+        <img src="Documents/WordPress/image1.png">
+        <img src="Documents/WordPress/image2.png">
+        <img src="Documents/WordPress/image3.png">
+
+
+        </div>
+</div>
+            <!-- 09 · GLPI Linux -->
+            <div class="projet-card">
+    <div class="projet-img-wrapper">
+        <span class="projet-num">09</span>
+        <img src="Documents/GLPI_linux/image1.png" alt="GLPI sous Linux">
+    </div>
+    <div class="projet-body">
+        <span class="projet-tag">Système · Linux · ITSM</span>
+        <h3>GLPI sous Linux</h3>
+        <p class="description">
+            Déploiement et configuration de GLPI (Gestionnaire Libre de Parc Informatique) 
+            sur un serveur Linux. Installation de la stack LAMP, paramétrage de la base de 
+            données, création d'inventaires, gestion des tickets d'incidents et configuration 
+            des profils utilisateurs.
+        </p>
+        <div class="tech-pills">
+            <span class="tech-pill">Linux</span>
+            <span class="tech-pill">GLPI</span>
+            <span class="tech-pill">Apache</span>
+            <span class="tech-pill">MySQL</span>
+            <span class="tech-pill">ITSM</span>
+        </div>
+    </div>
+    <div class="projet-actions">
+        <button class="btn btn-primary" onclick="ouvrirGalerie('glpi')">Voir la galerie</button>
+        <a href="Documents/GLPI_linux/glpi_documentation.pdf" target="_blank" class="btn">Documentation</a>
+    </div>
+    <div class="galerie-data" id="galerie-glpi">
+        <img src="Documents/GLPI_linux/image1.png">
+        <img src="Documents/GLPI_linux/image2.png">
+
+        
+        </div>
+</div>
+        </div>
     </main>
 
-    <div id="lightbox" class="lightbox" style="display:none;">
-        <span class="close" onclick="fermerGalerie()">&times;</span>
-        <div class="lightbox-container">
-            <img id="img-active" src="" alt="Image agrandie">
-            <div class="nav-buttons">
-                <button type="button" class="btn-nav" onclick="changerImage(-1)">Précédent</button>
-                <button type="button" class="btn-nav" onclick="changerImage(1)">Suivant</button>
-            </div>
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" onclick="fermerGalerie()">×</span>
+        <div class="lightbox-img-wrap">
+            <img id="img-active" src="" alt="Aperçu projet">
+        </div>
+        <div class="lightbox-controls">
+            <button class="btn-nav" onclick="changerImage(-1)">← Précédent</button>
+            <span class="lightbox-counter" id="lightbox-counter">1 / 1</span>
+            <button class="btn-nav" onclick="changerImage(1)">Suivant →</button>
         </div>
     </div>
 
-    <footer style="background:#000;color:#fff;padding:48px 10%;border-top:3px solid #fff;font-family:'Inter',sans-serif;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:36px;">
-        <div>
-          <h3 style="font-size:1.4rem;font-weight:900;text-transform:uppercase;letter-spacing:-1px;margin:0 0 6px;color:#fff;">Imdad Bouraima</h3>
-          <p style="font-size:0.8rem;color:#888;margin:0;text-transform:uppercase;letter-spacing:2px;">Développeur Full-Stack — BTS SIO SLAM</p>
+    <footer>
+        <div class="footer-top">
+            <div class="footer-name">
+                <h3>Imdad Bouraima</h3>
+                <p>Développeur Full-Stack — BTS SIO SLAM</p>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:bouraimasamory@gmail.com">
+                    <span class="footer-icon">@</span>
+                    bouraimasamory@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/feed/" target="_blank">
+                    <span class="footer-icon">in</span>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/IMDAD1306" target="_blank">
+                    <span class="footer-icon">gh</span>
+                    GitHub — IMDAD1306
+                </a>
+            </div>
         </div>
-        <div style="display:flex;flex-direction:column;gap:14px;">
-          <a href="mailto:bouraimasamory@gmail.com" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:0.9rem;">
-            <span style="width:28px;height:28px;border:1px solid #444;display:flex;align-items:center;justify-content:center;font-size:13px;">@</span>
-            bouraimasamory@gmail.com
-          </a>
-          <a href="https://www.linkedin.com/feed/" target="_blank" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:0.9rem;">
-            <span style="width:28px;height:28px;border:1px solid #444;display:flex;align-items:center;justify-content:center;font-size:13px;">in</span>
-            LinkedIn
-          </a>
-          <a href="https://github.com/IMDAD1306" target="_blank" style="display:flex;align-items:center;gap:10px;color:#ccc;text-decoration:none;font-size:0.9rem;">
-            <span style="width:28px;height:28px;border:1px solid #444;display:flex;align-items:center;justify-content:center;font-size:13px;">gh</span>
-            GitHub — IMDAD1306
-          </a>
+        <hr class="footer-hr">
+        <div class="footer-bottom">
+            <p>© 2026 Imdad Bouraima — Tous droits réservés</p>
+            <span class="footer-badge">Portfolio 2026</span>
         </div>
-      </div>
-      <hr style="border:none;border-top:1px solid #222;margin:0 0 24px;">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
-        <p style="font-size:0.78rem;color:#555;text-transform:uppercase;letter-spacing:2px;margin:0;">© 2026 Imdad Bouraima — Tous droits réservés</p>
-        <span style="font-size:0.75rem;color:#555;border:1px solid #333;padding:4px 12px;text-transform:uppercase;letter-spacing:1px;">Portfolio 2026</span>
-      </div>
-    </footer> 
+    </footer>
 
-    <script src="js/galerie.js"></script>
+    <script>
+        let galerieImages = [];
+        let indexActuel = 0;
+
+        function ouvrirGalerie(id) {
+            const conteneur = document.getElementById('galerie-' + id);
+            if (!conteneur) return;
+
+            galerieImages = Array.from(conteneur.querySelectorAll('img')).map(img => img.src);
+            if (galerieImages.length === 0) return;
+
+            indexActuel = 0;
+            afficherImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function fermerGalerie() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function changerImage(direction) {
+            indexActuel = (indexActuel + direction + galerieImages.length) % galerieImages.length;
+            afficherImage();
+        }
+
+        function afficherImage() {
+            document.getElementById('img-active').src = galerieImages[indexActuel];
+            document.getElementById('lightbox-counter').textContent = 
+                (indexActuel + 1) + ' / ' + galerieImages.length;
+        }
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') fermerGalerie();
+            if (e.key === 'ArrowLeft') changerImage(-1);
+            if (e.key === 'ArrowRight') changerImage(1);
+        });
+
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) fermerGalerie();
+        });
+    </script>
 </body>
 </html>
